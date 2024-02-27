@@ -125,7 +125,7 @@ form.addEventListener("submit", (e) => {
     .then((data) => {
       console.log("Success:", data);
       form.reset();
-      alert("News created successfully");
+      alert("News update successfully");
       window.location.href = "/index.xhtml";
     })
     .catch((error) => {
