@@ -82,18 +82,6 @@
     </header>
     <!-- header -->
 
-    <!-- btn update, delete -->
-    <div class="flex justify-end gap-1.5">        
-          <button class="py-3 px-5 bg-green-700 text-[#eff1f5] rounded-xl" type="submit">
-            <a href="#" id="updateLink">Sửa</a>
-          </button>     
-        <form action="" id="deleteForm" method="post">
-          <button class="py-3 px-5 bg-red-600 rounded-xl text-[#eff1f5] mr-40" type="submit">
-            <p >Xóa</p>       
-          </button> 
-        </form>  
-    </div>
-
     <!-- main -->
     <section class="max-w-[1200px] mx-auto my-10">
       <img
@@ -101,15 +89,44 @@
         alt=""
         class="w-full h-[400px] object-cover rounded-lg bg-center bg-cover shadow-lg image"
       />
-      <h1 class="text-4xl font-semibold mt-5 mb-3 title">
-        Lorem ipsum dolor sit amet
-      </h1>
-      <span class="">
-        <i class="far fa-clock"></i> 
-        <span class="time">2 hours ago </span>
-        <span class="mr-2">•</span>
-        <span class="mr-2 author">By Đạt</span>
-      </span>
+      <div class="flex items-center justify-between">
+        <div>
+          <h1 class="text-4xl font-semibold mt-5 mb-3 title">
+            Lorem ipsum dolor sit amet
+          </h1>
+          <span class="">
+            <i class="far fa-clock"></i>
+            <span class="time">2 hours ago </span>
+            <span class="mr-2">•</span>
+            <span class="mr-2 author">By Đạt</span>
+          </span>
+        </div>
+        <!-- btn update, delete -->
+        <div class="relative">
+          <div class="p-1 cursor-pointer" id="ellipsisButton"><i class="fas fa-ellipsis-v"></i></div>
+          <div
+            class="absolute bg-[#dce0e8] p-1 rounded-lg min-w-[150px] right-0 hidden" id="optionsContainer"
+          >
+            <button class="w-full hover:bg-[#1e66f5] hover:text-[#eff1f5] rounded-lg" type="submit">
+              <a
+                href="#"
+                id="updateLink"
+                class="inline-flex items-center gap-4 p-2"
+                ><i class="fas fa-pen"></i> Sửa</a
+              >
+            </button>
+            <form action="" id="deleteForm" method="post">
+              <button
+                class="inline-flex items-center justify-center gap-4 p-2 hover:bg-[#d20f39] w-full hover:text-[#eff1f5] rounded-lg"
+                type="submit"
+              >
+                <i class="fas fa-trash"></i>
+                <p>Xóa</p>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
       <p class="mt-5 content">
         The standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum
         dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -190,6 +207,5 @@
     <!-- scripts -->
     <script src="/js/newsDetail.js"></script>
     <!-- scripts -->
-    
   </body>
 </html>

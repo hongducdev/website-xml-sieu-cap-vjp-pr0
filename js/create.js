@@ -31,10 +31,13 @@ form.addEventListener("submit", (e) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log("Success:", data);
-      form.reset();
-      alert("News created successfully");
-      window.location.href = "/index.xhtml";
+      if(data.error) {
+        alert(data.error);
+      } else {
+        form.reset();
+        alert("News created successfully");
+        window.location.href = "/index.xhtml";
+      }
     })
     .catch((error) => {
       console.error("Error:", error);

@@ -46,20 +46,21 @@ const title = document.querySelector(".title");
 const author = document.querySelector(".author");
 const createdAt = document.querySelector(".time");
 const content = document.querySelector(".content");
-const updateLink = document.getElementById('updateLink');
-  
+const updateLink = document.getElementById("updateLink");
+const ellipsisButton = document.getElementById("ellipsisButton");
+const optionsContainer = document.getElementById("optionsContainer");
 
 // get api
 // http://localhost:4090/news/:id
 
-
-console.log(id)
 // truyền id vào vào form
-updateLink.href = `/update.html?id=${id}`;
-
-
+updateLink.href = `/update.xhtml?id=${id}`;
 
 const api = `http://localhost:4090/news/${id}`;
+
+ellipsisButton.addEventListener("click", () => {
+  optionsContainer.classList.toggle("hidden");
+});
 
 const getNews = async () => {
   try {
@@ -87,39 +88,28 @@ const getNews = async () => {
 getNews();
 
 // Lấy thẻ form xóa
-const deleteForm = document.getElementById('deleteForm');
+const deleteForm = document.getElementById("deleteForm");
 
 // Thêm sự kiện submit vào form
-deleteForm.addEventListener('submit', function(event) {
-    // Ngăn chặn hành vi mặc định của form
-    event.preventDefault();
-    // Hiển thị hộp thoại xác nhận
-    if (confirm("Bạn có chắc chắn muốn xóa không?")) {
-        // // Thay đổi action của form để chuyển hướng đến URL xóa
-        // deleteForm.action = `http://localhost:4090/news/delete/${id}`;
-        // // Submit form
-        // deleteForm.submit();
-        // form.reset();
-
-        // alert("News created successfully");
-
-        // window.location.href = "/index.xhtml";
+deleteForm.addEventListener("submit", function (event) {
+  // Ngăn chặn hành vi mặc định của form
+  event.preventDefault();
+  // Hiển thị hộp thoại xác nhận
+  if (confirm("Bạn có chắc chắn muốn xóa không?")) {
     fetch(`http://localhost:4090/news/delete/${id}`, {
-
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Success:", data);
-      alert("News delete successfully");
-      window.location.href = "/index.xhtml";
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
     })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
-    }
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+        alert("News delete successfully");
+        window.location.href = "/index.xhtml";
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }
 });
