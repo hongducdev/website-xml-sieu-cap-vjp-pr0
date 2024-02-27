@@ -44,7 +44,7 @@ const convertTime = (time) => {
   return "Just now";
 };
 
-const api = "http://localhost:4090/books";
+const api = "http://localhost:4090/news";
 let isLoading = false;
 let isError = false;
 
@@ -85,14 +85,14 @@ getNews()
           <span class="mr-2">•</span>
           <span class="mr-2">By ${data[0].author}</span>
         </span>
-        <a href="/news/${data[0].id}" class="">
+        <a href="/newsDetail.xhtml?id=${data[0].id}" class="">
           <h2 class="font-bold text-5xl hover:text-[#40a02b] transition-all duration-300 ease-in-out">${
             data[0].title
           }</h2>
         </a>
         <p class="mt-4 line-clamp-2">${data[0].content}</p>
         <span class="">
-          <a href="/news/${
+          <a href="/newsDetail.xhtml?id=${
             data[0].id
           }" class="text-[#40a02b] hover:underline"> Read more </a>
         </span>
@@ -114,7 +114,7 @@ getNews()
               <span class="mr-2">•</span>
               <span class="mr-2">By ${news.author}</span>
             </span>
-            <a href="/news/${news.id}" class="">
+            <a href="/newsDetail.xhtml?id=${news.id}" class="">
               <h2
                 class="font-bold text-2xl hover:text-[#40a02b] transition-all duration-300 ease-in-out"
               >
@@ -125,7 +125,7 @@ getNews()
               ${news.content}
             </p>
             <span class="">
-              <a href="/news/${
+              <a href="/newsDetail.xhtml?id=${
                 news.id
               }" class="text-[#40a02b] hover:underline"> Read more </a>
             </span>

@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Fake News</title>
+    <link rel="stylesheet" href="/css/global.css" />
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tailwind -->
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/7dd86c08e8.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- font awesome -->
+  </head>
+  <body>
+    <!-- header -->
+    <header class="">
+      <div class="bg-[#e6e9ef]">
+        <div
+          class="max-w-[1200px] mx-auto p-3 flex items-center justify-between"
+        >
+          <!-- social -->
+          <div class="flex items-center gap-5">
+            <a href="" class="">
+              <div
+                class="bg-[#5c5f77] w-8 h-8 rounded-full flex items-center justify-center text-[#eff1f5]"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </div>
+            </a>
+            <a href="" class="">
+              <div
+                class="bg-[#5c5f77] w-8 h-8 rounded-full flex items-center justify-center text-[#eff1f5]"
+              >
+                <i class="fab fa-instagram"></i>
+              </div>
+            </a>
+            <a href="" class="">
+              <div
+                class="bg-[#5c5f77] w-8 h-8 rounded-full flex items-center justify-center text-[#eff1f5]"
+              >
+                <i class="fab fa-github-alt"></i>
+              </div>
+            </a>
+          </div>
+          <!-- social -->
+
+          <!-- search -->
+          <div
+            class="border border-[#5c5f77] rounded-full h-8 px-2 flex items-center"
+          >
+            <input
+              type="text"
+              class="bg-transparent outline-none border-none"
+            />
+            <button class="p-2">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+          <!-- search -->
+        </div>
+      </div>
+
+      <!-- nav -->
+      <div
+        class="max-w-[1200px] mx-auto py-3 flex items-center justify-between"
+      >
+        <a href="/index.xhtml" class="">
+          <div class="flex items-center gap-3">
+            <i class="far fa-newspaper text-6xl"></i>
+            <span class="text-2xl uppercase font-semibold">Fake news</span>
+          </div>
+        </a>
+        <a href="" class="">
+          <div class="bg-[#4c4f69] text-[#eff1f5] py-3 px-4 rounded-lg">
+            Contact us
+          </div>
+        </a>
+      </div>
+      <!-- nav -->
+    </header>
+    <!-- header -->
+
+    <!-- main -->
+    <section class="max-w-[1200px] mx-auto my-10">
+      <h1 class="font-bold text-4xl">Tạo bài viết mới</h1>
+      <form class="flex flex-col gap-2 mt-4">
+        <div class="flex flex-col">
+          <label for="id" class=""> ID </label>
+          <input
+            type="text"
+            id="id"
+            name="id"
+            class="border border-[#5c5f77] rounded-full h-10 px-2"
+            placeholder="e.g: 1"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label for="title" class=""> Tiêu đề </label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            class="border border-[#5c5f77] rounded-full h-10 px-2"
+            placeholder="e.g: How to create a fake news"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label for="author" class=""> Tác giả </label>
+          <input
+            type="text"
+            id="author"
+            name="author"
+            class="border border-[#5c5f77] rounded-full h-10 px-2"
+            placeholder="e.g: John Doe"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label for="createdAt" class=""> Ngày tạo </label>
+          <input
+            type="text"
+            id="createdAt"
+            name="createdAt"
+            class="border border-[#5c5f77] rounded-full h-10 px-2"
+            placeholder="e.g: 2024-01-01"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label for="image" class=""> Hình ảnh </label>
+          <input
+            type="text"
+            id="image"
+            name="image"
+            class="border border-[#5c5f77] rounded-full h-10 px-2"
+            placeholder="e.g: https://source.unsplash.com/random"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label for="content" class=""> Nội dung </label>
+          <textarea
+            name="content"
+            id="content"
+            cols="30"
+            rows="10"
+            class="border border-[#5c5f77] rounded-lg p-2"
+          ></textarea>
+        </div>
+
+        <button class="bg-[#4c4f69] text-[#eff1f5] py-3 px-4 rounded-lg w-full">
+          Tạo bài viết
+        </button>
+      </form>
+    </section>
+    <!-- main -->
+
+    <!-- footer -->
+    <footer class="bg-[#4c4f69] text-[#eff1f5] text-center p-3">
+      <span class="">
+        &copy; 2024 <a href="" class="hover:underline">Fake News</a>
+      </span>
+    </footer>
+    <!-- footer -->
+
+    <!-- scripts -->
+    <script src="/js/create.js"></script>
+    <!-- scripts -->
+  </body>
+</html>
