@@ -46,9 +46,18 @@ const title = document.querySelector(".title");
 const author = document.querySelector(".author");
 const createdAt = document.querySelector(".time");
 const content = document.querySelector(".content");
+const updateLink = document.getElementById('updateLink');
+  
 
 // get api
 // http://localhost:4090/news/:id
+
+
+console.log(id)
+// truyền id vào vào form
+updateLink.href = `/update.html?id=${id}`;
+
+
 
 const api = `http://localhost:4090/news/${id}`;
 
@@ -76,3 +85,41 @@ const getNews = async () => {
 };
 
 getNews();
+
+// Lấy thẻ form xóa
+const deleteForm = document.getElementById('deleteForm');
+
+// Thêm sự kiện submit vào form
+deleteForm.addEventListener('submit', function(event) {
+    // Ngăn chặn hành vi mặc định của form
+    event.preventDefault();
+    // Hiển thị hộp thoại xác nhận
+    if (confirm("Bạn có chắc chắn muốn xóa không?")) {
+        // // Thay đổi action của form để chuyển hướng đến URL xóa
+        // deleteForm.action = `http://localhost:4090/news/delete/${id}`;
+        // // Submit form
+        // deleteForm.submit();
+        // form.reset();
+
+        // alert("News created successfully");
+
+        // window.location.href = "/index.xhtml";
+    fetch(`http://localhost:4090/news/delete/${id}`, {
+
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Success:", data);
+      alert("News delete successfully");
+      window.location.href = "/index.xhtml";
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+    }
+});
