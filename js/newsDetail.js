@@ -87,14 +87,18 @@ const getNews = async () => {
 
 getNews();
 
-// Lấy thẻ form xóa
 const deleteForm = document.getElementById("deleteForm");
 
-// Thêm sự kiện submit vào form
 deleteForm.addEventListener("submit", function (event) {
-  // Ngăn chặn hành vi mặc định của form
+
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (!user) {
+    alert("You need to login to delete news");
+    window.location.href = "/login.xhtml";
+    return;
+  }
+
   event.preventDefault();
-  // Hiển thị hộp thoại xác nhận
   if (confirm("Bạn có chắc chắn muốn xóa không?")) {
     fetch(`http://localhost:4090/news/delete/${id}`, {
       method: "POST",

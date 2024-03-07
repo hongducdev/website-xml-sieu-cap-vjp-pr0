@@ -1,6 +1,12 @@
 // select the form
 const form = document.querySelector("form");
 
+// get data from local storage
+const user = JSON.parse(localStorage.getItem("user"));
+if (!user) {
+  window.location.href = "/login.xhtml";
+}
+
 // add event listener to the form
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -8,7 +14,6 @@ form.addEventListener("submit", (e) => {
 
   const id = formData.get("id");
   const title = formData.get("title");
-  const author = formData.get("author");
   const createdAt = formData.get("createdAt");
   const image = formData.get("image");
   const content = formData.get("content");
@@ -16,7 +21,7 @@ form.addEventListener("submit", (e) => {
   const news = {
     id,
     title,
-    author,
+    author: user.name,
     createdAt,
     image,
     content,
@@ -31,7 +36,7 @@ form.addEventListener("submit", (e) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      if(data.error) {
+      if (data.error) {
         alert(data.error);
       } else {
         form.reset();

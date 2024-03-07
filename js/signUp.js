@@ -1,5 +1,9 @@
 // select the form
 const form = document.querySelector("form");
+const user = JSON.parse(localStorage.getItem("user"));
+if (user) {
+  window.location.href = "/index.xhtml";
+}
 
 // add event listener to the form
 form.addEventListener("submit", (e) => {
@@ -11,7 +15,6 @@ form.addEventListener("submit", (e) => {
   const name = formData.get("name");
   const address = formData.get("address");
   const email = formData.get("email");
-  
 
   const news = {
     username,
@@ -30,18 +33,18 @@ form.addEventListener("submit", (e) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      if(data.error) {
+      if (data.error) {
         alert(data.error);
       } else {
         form.reset();
         alert("Sign in successfully");
-        window.location.href = "/index.xhtml";
+        window.location.href = "/login.xhtml";
       }
     })
     .catch((error) => {
-    //   console.error("Error:", error);
-    form.reset();
-        alert("Sign in fail");
-        window.location.href = "/SignIn.xhtml";
+      //   console.error("Error:", error);
+      form.reset();
+      alert("Sign in fail");
+      window.location.href = "/signUp.xhtml";
     });
 });

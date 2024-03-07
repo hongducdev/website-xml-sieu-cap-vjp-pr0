@@ -4,6 +4,13 @@
 // selected elements
 const firstNews = document.querySelector(".first-news");
 const newsContainer = document.querySelector(".news-container");
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("header.xhtml")
+    .then((response) => response.text())
+    .then((html) => {
+      document.getElementById("headerContainer").innerHTML = html;
+    });
+});
 
 // covert time
 const convertTime = (time) => {
@@ -60,7 +67,6 @@ const getNews = async () => {
     });
 
     const data = await response.json();
-    console.log(data);
     if (data.error) {
       isError = true;
     }

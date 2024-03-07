@@ -15,71 +15,7 @@
   </head>
   <body>
     <!-- header -->
-    <header class="">
-      <div class="bg-[#e6e9ef]">
-        <div
-          class="max-w-[1200px] mx-auto p-3 flex items-center justify-between"
-        >
-          <!-- social -->
-          <div class="flex items-center gap-5">
-            <a href="" class="">
-              <div
-                class="bg-[#5c5f77] w-8 h-8 rounded-full flex items-center justify-center text-[#eff1f5]"
-              >
-                <i class="fab fa-facebook-f"></i>
-              </div>
-            </a>
-            <a href="" class="">
-              <div
-                class="bg-[#5c5f77] w-8 h-8 rounded-full flex items-center justify-center text-[#eff1f5]"
-              >
-                <i class="fab fa-instagram"></i>
-              </div>
-            </a>
-            <a href="" class="">
-              <div
-                class="bg-[#5c5f77] w-8 h-8 rounded-full flex items-center justify-center text-[#eff1f5]"
-              >
-                <i class="fab fa-github-alt"></i>
-              </div>
-            </a>
-          </div>
-          <!-- social -->
-
-          <!-- search -->
-          <div
-            class="border border-[#5c5f77] rounded-full h-8 px-2 flex items-center"
-          >
-            <input
-              type="text"
-              class="bg-transparent outline-none border-none"
-            />
-            <button class="p-2">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-          <!-- search -->
-        </div>
-      </div>
-
-      <!-- nav -->
-      <div
-        class="max-w-[1200px] mx-auto py-3 flex items-center justify-between"
-      >
-        <a href="/index.xhtml" class="">
-          <div class="flex items-center gap-3">
-            <i class="far fa-newspaper text-6xl"></i>
-            <span class="text-2xl uppercase font-semibold">Fake news</span>
-          </div>
-        </a>
-        <a href="" class="">
-          <div class="bg-[#4c4f69] text-[#eff1f5] py-3 px-4 rounded-lg">
-            Contact us
-          </div>
-        </a>
-      </div>
-      <!-- nav -->
-    </header>
+    <div id="headerContainer"></div>
     <!-- header -->
 
     <!-- main -->
@@ -104,16 +40,6 @@
             name="title"
             class="border border-[#5c5f77] rounded-full h-10 px-2"
             placeholder="e.g: How to create a fake news"
-          />
-        </div>
-        <div class="flex flex-col">
-          <label for="author" class=""> Tác giả </label>
-          <input
-            type="text"
-            id="author"
-            name="author"
-            class="border border-[#5c5f77] rounded-full h-10 px-2"
-            placeholder="e.g: John Doe"
           />
         </div>
         <div class="flex flex-col">
@@ -164,6 +90,7 @@
 
     <!-- scripts -->
     <script src="/js/create.js"></script>
+    <script src="/js/global.js"></script>
     <!-- scripts -->
   </body>
 </html>
